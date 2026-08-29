@@ -10,15 +10,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
 
     body {
-      /* Background putih keabu-abuan dengan pola titik-titik (dot grid) */
       background-color: #9ba4aa;
       background-image: radial-gradient(#d1d5db 1.5px, transparent 1.5px);
       background-size: 24px 24px;
@@ -39,134 +33,78 @@
       border: 1px solid rgba(226, 232, 240, 0.6);
     }
 
-    .header-section {
-      text-align: center;
-      margin-bottom: 32px;
-    }
-
+    .header-section { text-align: center; margin-bottom: 32px; position: relative; }
+    
     .logo-box {
-      width: 56px;
-      height: 56px;
-      background-color: #ecfdf5; /* Hijau pastel */
-      border: 1px solid #d1fae5;
-      border-radius: 18px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      color: #047857; /* Hijau gelap */
-      margin-bottom: 16px;
+      width: 56px; height: 56px; background-color: #ecfdf5; border: 1px solid #d1fae5;
+      border-radius: 18px; display: inline-flex; align-items: center; justify-content: center;
+      font-size: 24px; color: #047857; margin-bottom: 16px;
     }
 
-    .header-section h1 {
-      font-size: 22px;
-      font-weight: 800;
-      color: #0f172a;
-      letter-spacing: -0.5px;
-      margin-bottom: 6px;
+    .header-section h1 { font-size: 22px; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; margin-bottom: 6px; }
+    .header-section p { font-size: 14px; color: #64748b; font-weight: 400; margin-bottom: 12px; }
+    
+    .btn-logout {
+      background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; padding: 6px 12px;
+      border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 6px; transition: 0.2s;
     }
+    .btn-logout:hover { background: #fee2e2; }
 
-    .header-section p {
-      font-size: 14px;
-      color: #64748b;
-      font-weight: 400;
-    }
-
-    .menu-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
+    .menu-list { display: flex; flex-direction: column; gap: 16px; }
     .menu-item {
-      display: flex;
-      align-items: center;
-      background-color: #ffffff;
-      border: 1px solid #e2e8f0;
-      padding: 16px 20px;
-      border-radius: 16px;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      cursor: pointer;
+      display: flex; align-items: center; background-color: #ffffff;
+      border: 1px solid #e2e8f0; padding: 16px 20px; border-radius: 16px;
+      text-decoration: none; transition: all 0.2s ease; cursor: pointer; user-select: none;
     }
-
-    .menu-item:hover {
-      border-color: #cbd5e1;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-      transform: translateY(-1px);
-    }
+    .menu-item:hover { border-color: #cbd5e1; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); transform: translateY(-1px); }
 
     .icon-wrapper {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      margin-right: 16px;
-      flex-shrink: 0;
+      width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center;
+      justify-content: center; font-size: 18px; margin-right: 16px; flex-shrink: 0;
     }
+    .icon-blue { background-color: #eff6ff; color: #2563eb; }
+    .icon-green { background-color: #ecfdf5; color: #059669; }
 
-    /* Warna Icon Default (Biru) */
-    .icon-blue {
-      background-color: #eff6ff;
-      color: #2563eb;
-    }
-
-    /* Warna Icon Khusus Daftar Harga (Hijau) */
-    .icon-green {
-      background-color: #ecfdf5;
-      color: #059669;
-    }
-
-    .text-content {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .title {
-      font-size: 15px;
-      font-weight: 700;
-      color: #1e293b;
-    }
-
-    .subtitle {
-      font-size: 12px;
-      color: #64748b;
-      font-weight: 400;
-    }
-
-    .arrow {
-      color: #94a3b8;
-      font-size: 14px;
-      margin-left: 8px;
-      transition: transform 0.2s ease;
-    }
-
-    .menu-item:hover .arrow {
-      transform: translateX(3px);
-      color: #64748b;
-    }
+    .text-content { flex-grow: 1; display: flex; flex-direction: column; gap: 2px; }
+    .title { font-size: 15px; font-weight: 700; color: #1e293b; }
+    .subtitle { font-size: 12px; color: #64748b; font-weight: 400; }
+    .arrow { color: #94a3b8; font-size: 14px; margin-left: 8px; transition: transform 0.2s ease; }
+    .menu-item:hover .arrow { transform: translateX(3px); color: #64748b; }
   </style>
 </head>
 <body>
 
-  <div class="card-container">
+  <!-- === LAYAR LOGIN === -->
+  <div id="loginScreen" style="position: fixed; inset: 0; background: #9ba4aa; background-image: radial-gradient(#d1d5db 1.5px, transparent 1.5px); background-size: 24px 24px; z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px;">
+    <div style="background: white; padding: 40px 30px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); width: 100%; max-width: 360px; text-align: center; border: 1px solid rgba(226, 232, 240, 0.6);">
+      <div style="width: 60px; height: 60px; border-radius: 18px; background: #ecfdf5; color: #047857; display: grid; place-items: center; font-size: 28px; margin: 0 auto 20px; border: 1px solid #d1fae5;">🔐</div>
+      <h2 style="font-size: 22px; font-weight: 800; color: #0f172a; margin-bottom: 6px; letter-spacing: -0.5px;">Portal Karyawan</h2>
+      <p style="color: #64748b; font-size: 14px; font-weight: 500; margin-bottom: 28px;">Silakan login untuk akses menu.</p>
+      
+      <input type="text" id="loginUser" placeholder="Username" oninput="this.value = this.value.toUpperCase()" style="width: 100%; padding: 14px 16px; margin-bottom: 16px; border: 2px solid #cbd5e1; border-radius: 12px; font-size: 15px; outline: none; background: #f8fafc; font-weight: 700; text-align: center; letter-spacing: 1px; color:#0f172a;">
+      <input type="password" id="loginPass" placeholder="Password" style="width: 100%; padding: 14px 16px; margin-bottom: 24px; border: 2px solid #cbd5e1; border-radius: 12px; font-size: 15px; outline: none; background: #f8fafc; font-weight: 700; text-align: center; letter-spacing: 2px; color:#0f172a;">
+      
+      <button onclick="checkLogin()" style="width: 100%; padding: 16px; background: #2563eb; color: white; border: none; border-radius: 12px; font-size: 15px; font-weight: 700; cursor: pointer; transition: 0.2s;">Masuk Sistem</button>
+      
+      <p id="loginError" style="color: #dc2626; font-size: 13px; font-weight: 700; margin-top: 16px; display: none; background: #fef2f2; padding: 10px; border-radius: 8px; border: 1px solid #fecaca;">⚠️ Kredensial tidak valid!</p>
+    </div>
+  </div>
+
+  <!-- === MENU UTAMA (Disembunyikan di awal) === -->
+  <div class="card-container" id="mainApp" style="display: none;">
     <div class="header-section">
+      <div class="logo-box"><i class="fa-solid fa-leaf"></i></div>
       <h1>MENU UTAMA</h1>
       <p>Link Operasional & Manajemen Bayu Jaya</p>
+      <button class="btn-logout" onclick="logout()"><i class="fa-solid fa-power-off"></i> Keluar</button>
     </div>
 
     <div class="menu-list">
       
-      <!-- Menu 1: Pembukuan -->
-      <a href="https://script.google.com/macros/s/AKfycbw5AFksEHtYm72oHgdpEuHHxdkGTq-npgZKMYaD8NTo2ubMYxiEAOFMO5tCjFpoTIDDZQ/exec" target="_blank" class="menu-item">
-        <div class="icon-wrapper icon-blue">
-          <i class="fa-solid fa-book"></i>
-        </div>
+      <!-- Tautan sandi Base64 -->
+      <a onclick="openApp('aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J3NUFGa3NFSHRZbTcyb0hnZHBFdUhIeGRrR1RxLW5wZ1pLTVlhRDhOVG8ydWJNWXhpRUFPRk1PNXRDakZwb1RJRERaUS9leGVj')" class="menu-item">
+        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-book"></i></div>
         <div class="text-content">
           <span class="title">PEMBUKUAN</span>
           <span class="subtitle">Laporan Harian & Bulanan</span>
@@ -174,11 +112,8 @@
         <i class="fa-solid fa-chevron-right arrow"></i>
       </a>
 
-      <!-- Menu 2: Kuitansi -->
-      <a href="https://script.google.com/macros/s/AKfycbzTWL8sbmYEzohDF9lJre0pBRqk7jtxSAllqBBKGW3CmMT0sE8vMAZvifhA4r61Yfds/exec" target="_blank" class="menu-item">
-        <div class="icon-wrapper icon-blue">
-          <i class="fa-solid fa-receipt"></i>
-        </div>
+      <a onclick="openApp('aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J6VFdMOHNibVlFem9oREY5bEpyZTBwQlJxazdqdHhTQWxscUJCS0dXM0NtTVQwc0U4dk1BWnZpZmhBNHI2MVlmZHMvZXhlYw==')" class="menu-item">
+        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-receipt"></i></div>
         <div class="text-content">
           <span class="title">KUITANSI</span>
           <span class="subtitle">Aplikasi Pembayaran TBS/Brondolan</span>
@@ -186,11 +121,8 @@
         <i class="fa-solid fa-chevron-right arrow"></i>
       </a>
 
-      <!-- Menu 3: Rekap WSM -->
-      <a href="https://script.google.com/macros/s/AKfycbzwXHTnTpQ5b2TWk5t3Ll46zcz3BFwZGuus9g86u-PGHdj0y07gYfHYia_KeKdgwOz1/exec" target="_blank" class="menu-item">
-        <div class="icon-wrapper icon-blue">
-          <i class="fa-solid fa-chart-line"></i>
-        </div>
+      <a onclick="openApp('aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J6d1hIVG5UcFE1YjJUV2s1dDNMbDQ2emN6M0JGd1pHdXVzOWc4NnUtUEdIZGoweTA3Z1lmSFlpYV9LZUtkZ3dPejEvZXhlYw==')" class="menu-item">
+        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-chart-line"></i></div>
         <div class="text-content">
           <span class="title">REKAP WSM</span>
           <span class="subtitle">Laporan & ringkasan data WSM</span>
@@ -198,11 +130,8 @@
         <i class="fa-solid fa-chevron-right arrow"></i>
       </a>
 
-    <!-- Menu 4: Daftar Harga -->
-      <a href="https://script.google.com/macros/s/AKfycbw7ahJCPjNqfvUDajyOwddhBHAHcomxNnVXoLRYI7u9tIbV1dmonnCwlvo5kdggLZDt/exec?page=admin&key=bayujaya1232006" target="_blank" class="menu-item">
-        <div class="icon-wrapper icon-blue">
-          <i class="fa-solid fa-tags"></i>
-        </div>
+      <a onclick="openApp('aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J3N2FoSkNQak5xZnZVRGFqeU93ZGRoQkhBSGNvbXhOblZYb0xSWUk3dTl0SWJWMWRtb25uQ3dsdm81a2RnZ0xaRHQvZXhlYz9wYWdlPWFkbWluJmtleT1iYXl1amF5YTEyMzIwMDY=')" class="menu-item">
+        <div class="icon-wrapper icon-green"><i class="fa-solid fa-tags"></i></div>
         <div class="text-content">
           <span class="title">DAFTAR HARGA</span>
           <span class="subtitle">Pembaruan harga sawit terbaru</span>
@@ -210,11 +139,8 @@
         <i class="fa-solid fa-chevron-right arrow"></i>
       </a>
 
-    <!-- Menu 5: Daftar Rekening -->
-      <a href="https://script.google.com/macros/s/AKfycbx7cajkZVD2DGBvb7GBOMITQTydboHxHVQoO1TC61MOhX8G-9OKhF6O-8edFERJjB-QVg/exec" target="_blank" class="menu-item">
-        <div class="icon-wrapper icon-blue">
-          <i class="fa-solid fa-building-columns"></i>
-        </div>
+      <a onclick="openApp('aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J4N2NhamtaVkQyREdCdmI3R0JPTUlUUXR5ZGJvSHhIVlFvTzFUQzYxTU9oWDhHLTlPS2hGNk8tOGVkRkVSSmpCLVFWZy9leGVj')" class="menu-item">
+        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-building-columns"></i></div>
         <div class="text-content">
           <span class="title">DAFTAR REKENING</span>
           <span class="subtitle">Manajemen penyimpanan data rekening</span>
@@ -225,5 +151,73 @@
     </div>
   </div>
 
+  <script>
+    // URL API yang baru kamu buat
+    const API_URL = "https://script.google.com/macros/s/AKfycbxYBOinZ0Yhvt8K5zTXPI2RayxdhgpaAVRw63LH0KlkUTjyQTIEwTJI7WemOAZzfsI/exec";
+
+    // 1. Cek Memori Browser (Otomatis masuk jika sudah pernah login)
+    window.onload = function() {
+      if (localStorage.getItem("bayuJayaAccess") === "granted") {
+        document.getElementById("loginScreen").style.display = "none";
+        document.getElementById("mainApp").style.display = "block";
+      }
+    };
+
+    // 2. Logika Verifikasi Sandi via Server API
+    function checkLogin() {
+      const user = document.getElementById("loginUser").value;
+      const pass = document.getElementById("loginPass").value;
+      const btn = event.target;
+      const err = document.getElementById("loginError");
+
+      // Ubah tombol jadi status loading
+      btn.textContent = "Mengecek Server...";
+      btn.style.background = "#475569"; 
+      btn.disabled = true;
+
+      // Menembak API di Google Apps Script
+      fetch(`${API_URL}?user=${user}&pass=${pass}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.status === "sukses") {
+            btn.textContent = "Berhasil Masuk ✅";
+            btn.style.background = "#059669";
+            
+            // Simpan tiket di memori browser
+            localStorage.setItem("bayuJayaAccess", "granted");
+            
+            setTimeout(() => {
+              document.getElementById("loginScreen").style.display = "none";
+              document.getElementById("mainApp").style.display = "block";
+            }, 600);
+          } else {
+            // Jika ditolak server
+            throw new Error("Kredensial Salah");
+          }
+        })
+        .catch(error => {
+          // Mengembalikan tombol dan memunculkan pesan error
+          btn.textContent = "Masuk Sistem";
+          btn.style.background = "#2563eb";
+          btn.disabled = false;
+          
+          err.style.display = "block";
+          setTimeout(() => { err.style.display = "none"; }, 3000);
+        });
+    }
+
+    // 3. Fungsi Pengecoh Link (Menerjemahkan Sandi Base64)
+    function openApp(secretCode) {
+      // Decode sandi dan buka di tab baru
+      const realUrl = atob(secretCode); 
+      window.open(realUrl, '_blank');
+    }
+
+    // 4. Fungsi Keluar (Hapus Tiket Memori)
+    function logout() {
+      localStorage.removeItem("bayuJayaAccess");
+      location.reload(); 
+    }
+  </script>
 </body>
 </html>
