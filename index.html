@@ -25,52 +25,87 @@
 
     .card-container {
       width: 100%;
-      max-width: 460px;
+      max-width: 440px;
       background: #ffffff;
-      border-radius: 24px;
-      padding: 40px 32px;
-      box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
-      border: 1px solid rgba(226, 232, 240, 0.6);
+      border-radius: 28px;
+      padding: 36px 28px;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(226, 232, 240, 0.8);
     }
 
-    .header-section { text-align: center; margin-bottom: 32px; position: relative; }
+    .header-section { text-align: center; margin-bottom: 28px; position: relative; }
     
     .logo-box {
       width: 56px; height: 56px; background-color: #ecfdf5; border: 1px solid #d1fae5;
       border-radius: 18px; display: inline-flex; align-items: center; justify-content: center;
-      font-size: 24px; color: #047857; margin-bottom: 16px;
+      font-size: 24px; color: #047857; margin-bottom: 14px;
     }
 
-    .header-section h1 { font-size: 22px; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; margin-bottom: 6px; }
-    .header-section p { font-size: 14px; color: #64748b; font-weight: 400; margin-bottom: 12px; }
+    .header-section h1 { font-size: 22px; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; margin-bottom: 4px; }
+    .header-section p { font-size: 13px; color: #64748b; font-weight: 500; margin-bottom: 14px; }
     
     .btn-logout {
-      background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; padding: 6px 12px;
-      border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer;
+      background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; padding: 6px 14px;
+      border-radius: 10px; font-size: 12px; font-weight: 700; cursor: pointer;
       display: inline-flex; align-items: center; gap: 6px; transition: 0.2s;
     }
     .btn-logout:hover { background: #fee2e2; }
 
-    .menu-list { display: flex; flex-direction: column; gap: 16px; }
-    .menu-item {
-      display: flex; align-items: center; background-color: #ffffff;
-      border: 1px solid #e2e8f0; padding: 16px 20px; border-radius: 16px;
-      text-decoration: none; transition: all 0.2s ease; cursor: pointer; user-select: none;
+    /* Layout Grid 2 Kolom */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
     }
-    .menu-item:hover { border-color: #cbd5e1; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); transform: translateY(-1px); }
+
+    .menu-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 22px 12px;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .menu-item:hover {
+      background-color: #ffffff;
+      border-color: #cbd5e1;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      transform: translateY(-3px);
+    }
 
     .icon-wrapper {
-      width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center;
-      justify-content: center; font-size: 18px; margin-right: 16px; flex-shrink: 0;
+      width: 52px; height: 52px; border-radius: 16px; display: flex; align-items: center;
+      justify-content: center; font-size: 22px; margin-bottom: 12px; flex-shrink: 0;
+      transition: transform 0.2s ease;
     }
-    .icon-blue { background-color: #eff6ff; color: #2563eb; }
-    .icon-green { background-color: #ecfdf5; color: #059669; }
 
-    .text-content { flex-grow: 1; display: flex; flex-direction: column; gap: 2px; }
-    .title { font-size: 15px; font-weight: 700; color: #1e293b; }
-    .subtitle { font-size: 12px; color: #64748b; font-weight: 400; }
-    .arrow { color: #94a3b8; font-size: 14px; margin-left: 8px; transition: transform 0.2s ease; }
-    .menu-item:hover .arrow { transform: translateX(3px); color: #64748b; }
+    .menu-item:hover .icon-wrapper {
+      transform: scale(1.08);
+    }
+
+    /* Variasi Warna Icon */
+    .icon-blue   { background-color: #eff6ff; color: #2563eb; border: 1px solid #dbeafe; }
+    .icon-green  { background-color: #ecfdf5; color: #059669; border: 1px solid #d1fae5; }
+    .icon-purple { background-color: #f3e8ff; color: #7c3aed; border: 1px solid #e9d5ff; }
+    .icon-amber  { background-color: #fffbeb; color: #d97706; border: 1px solid #fef3c7; }
+    .icon-indigo { background-color: #e0e7ff; color: #4338ca; border: 1px solid #c7d2fe; }
+    .icon-rose   { background-color: #ffe4e6; color: #e11d48; border: 1px solid #fecdd3; }
+
+    .title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #1e293b;
+      letter-spacing: 0.2px;
+      line-height: 1.3;
+    }
   </style>
 </head>
 <body>
@@ -91,70 +126,58 @@
     </div>
   </div>
 
-  <!-- === MENU UTAMA (Disembunyikan di awal) === -->
+  <!-- === MENU UTAMA (1 BARIS 2 LINK) === -->
   <div class="card-container" id="mainApp" style="display: none;">
     <div class="header-section">
       <div class="logo-box"><i class="fa-solid fa-leaf"></i></div>
       <h1>MENU UTAMA</h1>
-      <p>Link Operasional & Manajemen Bayu Jaya</p>
+      <p>Bayu Jaya Operations</p>
       <button class="btn-logout" onclick="logout()"><i class="fa-solid fa-power-off"></i> Keluar</button>
     </div>
 
-    <div class="menu-list">
+    <div class="menu-grid">
       
-      <!-- Tautan sandi Base64 -->
+      <!-- 1. PEMBUKUAN -->
       <a onclick="openApp('https://script.google.com/macros/s/AKfycbzvjcxcuU8pACqCEniX1YJopr1RqKcygD_sVnQPnkU43J__F2lUhB3l_xM487IqOutOHg/exec')" class="menu-item">
         <div class="icon-wrapper icon-blue"><i class="fa-solid fa-book"></i></div>
-        <div class="text-content">
-          <span class="title">PEMBUKUAN</span>
-          <span class="subtitle">Laporan Harian & Bulanan</span>
-        </div>
-        <i class="fa-solid fa-chevron-right arrow"></i>
+        <span class="title">PEMBUKUAN</span>
       </a>
 
+      <!-- 2. INVOICE TONASE -->
+      <a onclick="openApp('https://script.google.com/macros/s/AKfycbzkoho6pD4B9dotnnjGYaichhkEdicdhzyNMc2QsMYXTL4FiAFKfI_vUci55WaQOfMQ/exec')" class="menu-item">
+        <div class="icon-wrapper icon-rose"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+        <span class="title">INVOICE TONASE</span>
+      </a>
+
+      <!-- 3. KUITANSI -->
       <a onclick="openApp('aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J6VFdMOHNibVlFem9oREY5bEpyZTBwQlJxazdqdHhTQWxscUJCS0dXM0NtTVQwc0U4dk1BWnZpZmhBNHI2MVlmZHMvZXhlYw==')" class="menu-item">
-        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-receipt"></i></div>
-        <div class="text-content">
-          <span class="title">KUITANSI</span>
-          <span class="subtitle">Aplikasi Pembayaran TBS/Brondolan</span>
-        </div>
-        <i class="fa-solid fa-chevron-right arrow"></i>
+        <div class="icon-wrapper icon-indigo"><i class="fa-solid fa-receipt"></i></div>
+        <span class="title">KUITANSI</span>
       </a>
 
+      <!-- 4. REKAP WSM -->
       <a onclick="openApp('aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J6d1hIVG5UcFE1YjJUV2s1dDNMbDQ2emN6M0JGd1pHdXVzOWc4NnUtUEdIZGoweTA3Z1lmSFlpYV9LZUtkZ3dPejEvZXhlYw==')" class="menu-item">
-        <div class="icon-wrapper icon-blue"><i class="fa-solid fa-chart-line"></i></div>
-        <div class="text-content">
-          <span class="title">REKAP WSM</span>
-          <span class="subtitle">Laporan & ringkasan data WSM</span>
-        </div>
-        <i class="fa-solid fa-chevron-right arrow"></i>
+        <div class="icon-wrapper icon-purple"><i class="fa-solid fa-chart-line"></i></div>
+        <span class="title">REKAP WSM</span>
       </a>
 
+      <!-- 5. DAFTAR HARGA -->
       <a onclick="openApp('aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J3N2FoSkNQak5xZnZVRGFqeU93ZGRoQkhBSGNvbXhOblZYb0xSWUk3dTl0SWJWMWRtb25uQ3dsdm81a2RnZ0xaRHQvZXhlYz9wYWdlPWFkbWluJmtleT1iYXl1amF5YTEyMzIwMDY=')" class="menu-item">
         <div class="icon-wrapper icon-green"><i class="fa-solid fa-tags"></i></div>
-        <div class="text-content">
-          <span class="title">DAFTAR HARGA</span>
-          <span class="subtitle">Pembaruan harga sawit terbaru</span>
-        </div>
-        <i class="fa-solid fa-chevron-right arrow"></i>
+        <span class="title">DAFTAR HARGA</span>
       </a>
 
-    <a onclick="window.open('https://script.google.com/macros/s/AKfycbx7cajkZVD2DGBvb7GBOMITQTydboHxHVQoO1TC61MOhX8G-9OKhF6O-8edFERJjB-QVg/exec', '_blank')" class="menu-item">
-      <div class="icon-wrapper icon-blue">
-        <i class="fa-solid fa-building-columns"></i>
-      </div>
-      <div class="text-content">
+      <!-- 6. DAFTAR REKENING -->
+      <a onclick="openApp('https://script.google.com/macros/s/AKfycbx7cajkZVD2DGBvb7GBOMITQTydboHxHVQoO1TC61MOhX8G-9OKhF6O-8edFERJjB-QVg/exec')" class="menu-item">
+        <div class="icon-wrapper icon-amber"><i class="fa-solid fa-building-columns"></i></div>
         <span class="title">DAFTAR REKENING</span>
-        <span class="subtitle">Manajemen penyimpanan data rekening</span>
-      </div>
-      <i class="fa-solid fa-chevron-right arrow"></i>
-    </a>
+      </a>
 
     </div>
   </div>
 
   <script>
-    // URL API yang baru kamu buat
+    // URL API Google Apps Script
     const API_URL = "https://script.google.com/macros/s/AKfycbxYBOinZ0Yhvt8K5zTXPI2RayxdhgpaAVRw63LH0KlkUTjyQTIEwTJI7WemOAZzfsI/exec";
 
     // 1. Cek Memori Browser (Otomatis masuk jika sudah pernah login)
@@ -172,12 +195,10 @@
       const btn = event.target;
       const err = document.getElementById("loginError");
 
-      // Ubah tombol jadi status loading
       btn.textContent = "Mengecek Server...";
       btn.style.background = "#475569"; 
       btn.disabled = true;
 
-      // Menembak API di Google Apps Script
       fetch(`${API_URL}?user=${user}&pass=${pass}`)
         .then(response => response.json())
         .then(data => {
@@ -185,7 +206,6 @@
             btn.textContent = "Berhasil Masuk ✅";
             btn.style.background = "#059669";
             
-            // Simpan tiket di memori browser
             localStorage.setItem("bayuJayaAccess", "granted");
             
             setTimeout(() => {
@@ -193,12 +213,10 @@
               document.getElementById("mainApp").style.display = "block";
             }, 600);
           } else {
-            // Jika ditolak server
             throw new Error("Kredensial Salah");
           }
         })
         .catch(error => {
-          // Mengembalikan tombol dan memunculkan pesan error
           btn.textContent = "Masuk Sistem";
           btn.style.background = "#2563eb";
           btn.disabled = false;
@@ -208,14 +226,21 @@
         });
     }
 
-    // 3. Fungsi Pengecoh Link (Menerjemahkan Sandi Base64)
-    function openApp(secretCode) {
-      // Decode sandi dan buka di tab baru
-      const realUrl = atob(secretCode); 
-      window.open(realUrl, '_blank');
+    // 3. Fungsi Buka App (Mendukung URL Biasa & Base64)
+    function openApp(input) {
+      if (input.startsWith('http://') || input.startsWith('https://')) {
+        window.open(input, '_blank');
+      } else {
+        try {
+          const realUrl = atob(input); 
+          window.open(realUrl, '_blank');
+        } catch(e) {
+          window.open(input, '_blank');
+        }
+      }
     }
 
-    // 4. Fungsi Keluar (Hapus Tiket Memori)
+    // 4. Fungsi Keluar
     function logout() {
       localStorage.removeItem("bayuJayaAccess");
       location.reload(); 
